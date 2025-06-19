@@ -1,1 +1,2 @@
-# Personal Portifolio - Made with HTML | CSS | JAVASCRIPT
+# Personal Portifolio
+Made with HTML | CSS | JavaScript
