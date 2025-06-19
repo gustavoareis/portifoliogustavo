@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <link rel="shortcut icon" href="images/github-mark-white.svg" type="image/x-icon">
+  <meta charset="UTF-8">
+  <title>Gustavo Portifólio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="jscript.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <nav class="navegacao">
+    <ul class="menu">
+      <li>
+        <a href="#inicio" class="menu-link">Início</a>
+      </li>
+      <li>
+        <a href="#sobre" class="menu-link">Sobre</a>
+      </li>
+      <li>
+        <a href="#projetos" class="menu-link">Projetos</a>
+      </li>
+      <li>
+        <a href="#contato" class="menu-link">Contato</a>
+      </li>
+    </ul>
+  </nav>
+  <main class="cabecalho" id="inicio">
+
+    <img class="fotoperfil" src="images/mesbb.png" alt="fotoperfil">
+    <h1 class="saudacao">Gustavo Almeida</h1>
+    <p class="subsaudacao">Desenvolvedor iniciante Full Stack<span class="cursor">|</span></p>
+
+  </main>
+
+  <section class="sobre" id="sobre">
+    <h2 class="sobre-titulo">Sobre mim</h2>
+    <div class="sobre-box">
+      <p class="sobre-paragraph">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus aut hic possimus voluptatum saepe recusandae
+        pariatur corporis! Harum id quo voluptates, quia tenetur obcaecati! Corporis sapiente consequuntur quae rem
+        vitae.
+      </p>
+    </div>
+  </section>
+
+  <section class="projetos" id="projetos">
+
+    <h2 class="projetos-titulo">Meus Projetos</h2>
+    <div class="projetos-caixa">
+
+      <div class="projetos-card">
+        <img class="projetos-img" src="images/blank.png" alt="">
+        <div class="caixa-textos-projeto">
+          <h3 class="info-projetos">Projeto 1</h3>
+          <p class="projetos-paragrafo">Lorem ipsum dolor sit amet</p>
+        </div>
+      </div>
+
+      <div class="projetos-card">
+        <img class="projetos-img" src="images/blank.png" alt="">
+        <div class="caixa-textos-projeto">
+          <h3 class="info-projetos">Projeto 2</h3>
+          <p class="projetos-paragrafo">Lorem ipsum dolor sit amet</p>
+        </div>
+      </div>
+
+      <div class="projetos-card">
+        <img class="projetos-img" src="images/blank.png" alt="">
+        <div class="caixa-textos-projeto">
+          <h3 class="info-projetos">Projeto 3</h3>
+          <p class="projetos-paragrafo">Lorem ipsum dolor sit amet</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contatos" id=contato>
+    <h2 class="contatos-titulo">Entre em contato</h2>
+
+    <form class="contato-formulario" id="formulario" onsubmit="enviarWhats(event)">
+      <div class="grupo-form">
+        <input class="campo-form" placeholder="Nome" id="nome">
+      </div>
+
+      <div class="grupo-form">
+        <textarea class="campo-form" placeholder="Digite sua mensagem" rows="4" id="mensagem"></textarea>
+      </div>
+      <button type="submit" class="botao-form">Enviar Whatsapp</button>
+    </form>
+
+  </section>
+
+</body>
+
+<footer class="rodape">
+  <h1 class="rodapeh1">Portfolio made by Gustavo Almeida</h1>
+</footer>
+
+</html>
