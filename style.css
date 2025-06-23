@@ -24,7 +24,7 @@ html {
 
 body {
   /* background: linear-gradient(90deg,rgba(0, 45, 87, 1) 0%, rgba(0, 121, 145, 1) 43%, rgba(0, 45, 87, 1) 100%); */
-  background: #222222;
+  /*background: #222222;*/
   color: rgb(255, 255, 255);
 }
 
@@ -76,7 +76,7 @@ body {
 
 .fotoperfil {
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
   height: auto;
   border-radius: 100%;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;

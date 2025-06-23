@@ -1,0 +1,31 @@
+/* Fundo preto fixo com perspectiva */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #141414;
+    perspective: 500px;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Estilo das estrelas */
+.star {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: #fff;
+    animation: moveStars 10s linear infinite;
+}
+
+/* Animação de profundidade */
+@keyframes moveStars {
+    from {
+        transform: translateZ(0);
+    }
+    to {
+        transform: translateZ(-0px);
+    }
+}
