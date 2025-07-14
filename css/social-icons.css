@@ -1,21 +1,21 @@
 .social-icons a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    background-color: transparent;
-    border: 0.2rem solid #00B7DB;
-    font-size: 2rem;
-    border-radius: 50%;
-    margin: 3rem 1.5rem 3rem 0;
-    transition: 0.3s ease;
-    color: #00B7DB;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background-color: transparent;
+  border: 0.2rem solid #00b7db;
+  font-size: 2rem;
+  border-radius: 50%;
+  margin: 3rem 1.5rem 3rem 0;
+  transition: 0.3s ease;
+  color: #00b7db;
 }
 
 .social-icons a:hover {
-    color: #222222;
-    transform: scale(1.2) translateY(-5px);
-    background-color: #00B7DB;
-    box-shadow: 0  0 25px #00B7DB;
+  color: #222222;
+  transform: scale(1.2) translateY(-5px);
+  background-color: #00b7db;
+  box-shadow: 0 0 25px #00b7db;
 }
