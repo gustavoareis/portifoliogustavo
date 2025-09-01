@@ -1,121 +1,145 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <link
+      rel="icon"
+      href="images/github-mark-white.svg?v=1"
+      type="image/svg+xml"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <meta charset="UTF-8" />
+    <title>Gustavo Portifólio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/social-icons.css" />
+    <script src="js/scroll.js"></script>
+    <script src="js/zap.js"></script>
+  </head>
 
-<head>
-  <link rel="icon" href="images/github-mark-white.svg?v=1" type="image/svg+xml">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <meta charset="UTF-8">
-  <title>Gustavo Portifólio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/social-icons.css">
-  <script src="js/scroll.js"></script>
-  <script src="js/zap.js"></script>
-</head>
+  <body>
+    <div class="background"></div>
 
-<body>
-
-  <div class="background"></div>
-
-  <nav class="navegacao">
-    <ul class="menu">
-      <li>
-        <a href="#inicio" class="menu-link">Início</a>
-      </li>
-      <li>
-        <a href="#sobre" class="menu-link">Sobre</a>
-      </li>
-      <li>
-        <a href="#projetos" class="menu-link">Projetos</a>
-      </li>
-      <li>
-        <a href="#contato" class="menu-link">Contato</a>
-      </li>
-    </ul>
-  </nav>
-  <main class="cabecalho" id="inicio">
-
-    <img class="fotoperfil" src="images/mesbb.jpg" alt="fotoperfil">
-    <h1 class="saudacao">Gustavo Almeida</h1>
-    <p class="subsaudacao">Desenvolvedor iniciante <span class="fullstack">Full Stack</span><span
-        class="cursor">|</span></p>
-
-    <div class="social-icons">
-      <a href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://github.com/gustavoareis" target="_blank" rel="noopener noreferrer"><i
-          class="fa-brands fa-github"></i></a>
-      <a href="https://www.instagram.com/gustavoreisz_/" target="_blank" rel="noopener noreferrer"><i
-          class="fa-brands fa-instagram"></i></a>
-    </div>
-
-  </main>
-
-  <section class="sobre" id="sobre">
-    <h2 class="sobre-titulo">Sobre mim</h2>
-    <div class="sobre-box">
-      <p class="sobre-paragraph">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus aut hic possimus voluptatum saepe recusandae
-        pariatur corporis! Harum id quo voluptates, quia tenetur obcaecati! Corporis sapiente consequuntur quae rem
-        vitae.
+    <nav class="navegacao">
+      <ul class="menu">
+        <li>
+          <a href="#inicio" class="menu-link">Início</a>
+        </li>
+        <li>
+          <a href="#sobre" class="menu-link">Sobre</a>
+        </li>
+        <li>
+          <a href="#projetos" class="menu-link">Projetos</a>
+        </li>
+        <li>
+          <a href="#contato" class="menu-link">Contato</a>
+        </li>
+      </ul>
+    </nav>
+    <main class="cabecalho" id="inicio">
+      <img class="fotoperfil" src="images/mesbb.jpg" alt="fotoperfil" />
+      <h1 class="saudacao">Gustavo Almeida</h1>
+      <p class="subsaudacao">
+        Desenvolvedor iniciante <span class="fullstack">Full Stack</span
+        ><span class="cursor">|</span>
       </p>
-    </div>
-  </section>
 
-  <section class="projetos" id="projetos">
+      <div class="social-icons">
+        <a href="#" target="_blank" rel="noopener noreferrer"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+        <a
+          href="https://github.com/gustavoareis"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/gustavoreisz_/"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+      </div>
+    </main>
 
-    <h2 class="projetos-titulo">Meus Projetos</h2>
-    <div class="projetos-caixa">
+    <section class="sobre" id="sobre">
+      <h2 class="sobre-titulo">Sobre mim</h2>
+      <div class="sobre-box">
+        <p class="sobre-paragraph">
+          Olá! Eu sou Gustavo, estudante de Tecnologia em Telemática pelo IFCE –
+          Campus Fortaleza e desenvolvedor com foco em soluções Full-Stack. Sou
+          motivado por aprender novas tecnologias e transformar ideias em
+          aplicações práticas e funcionais. Sempre busco evoluir minhas
+          habilidades e compartilhar conhecimento por meio de projetos abertos.
+        </p>
+      </div>
+    </section>
 
-      <a href="https://qr-code-generator-seven-lyart.vercel.app/" target="blank">
+    <section class="projetos" id="projetos">
+      <h2 class="projetos-titulo">Meus Projetos</h2>
+      <div class="projetos-caixa">
+        <a
+          href="https://qr-code-generator-seven-lyart.vercel.app/"
+          target="blank"
+        >
+          <div class="projetos-card">
+            <img class="projetos-img" src="images/qr-code-project.png" alt="" />
+            <div class="caixa-textos-projeto">
+              <h3 class="info-projetos">QR Code Generator</h3>
+              <p class="projetos-paragrafo">React, Next.js, TypeScript</p>
+            </div>
+          </div>
+        </a>
+
         <div class="projetos-card">
-          <img class="projetos-img" src="images/qr-code-project.png" alt="">
+          <img class="projetos-img" src="images/blank.png" alt="" />
           <div class="caixa-textos-projeto">
-            <h3 class="info-projetos">QR Code Generator</h3>
-            <p class="projetos-paragrafo">React, Next.js, TypeScript</p>
+            <h3 class="info-projetos">Projeto 2</h3>
+            <p class="projetos-paragrafo">Lorem ipsum dolor sit amet</p>
           </div>
         </div>
-      </a>
 
-      <div class="projetos-card">
-        <img class="projetos-img" src="images/blank.png" alt="">
-        <div class="caixa-textos-projeto">
-          <h3 class="info-projetos">Projeto 2</h3>
-          <p class="projetos-paragrafo">Lorem ipsum dolor sit amet</p>
+        <div class="projetos-card">
+          <img class="projetos-img" src="images/blank.png" alt="" />
+          <div class="caixa-textos-projeto">
+            <h3 class="info-projetos">Projeto 3</h3>
+            <p class="projetos-paragrafo">Lorem ipsum dolor sit amet</p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="projetos-card">
-        <img class="projetos-img" src="images/blank.png" alt="">
-        <div class="caixa-textos-projeto">
-          <h3 class="info-projetos">Projeto 3</h3>
-          <p class="projetos-paragrafo">Lorem ipsum dolor sit amet</p>
+    <section class="contatos" id="contato">
+      <h2 class="contatos-titulo">Entre em contato</h2>
+
+      <form
+        class="contato-formulario"
+        id="formulario"
+        onsubmit="enviarWhats(event)"
+      >
+        <div class="grupo-form">
+          <input class="campo-form" placeholder="Nome" id="nome" />
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="contatos" id=contato>
-    <h2 class="contatos-titulo">Entre em contato</h2>
+        <div class="grupo-form">
+          <textarea
+            class="campo-form"
+            placeholder="Digite sua mensagem"
+            rows="4"
+            id="mensagem"
+          ></textarea>
+        </div>
+        <button type="submit" class="botao-form">Enviar Whatsapp</button>
+      </form>
+    </section>
+  </body>
 
-    <form class="contato-formulario" id="formulario" onsubmit="enviarWhats(event)">
-      <div class="grupo-form">
-        <input class="campo-form" placeholder="Nome" id="nome">
-      </div>
+  <footer class="rodape">
+    <h1 class="rodapeh1">Portfolio made by Gustavo Almeida</h1>
+  </footer>
 
-      <div class="grupo-form">
-        <textarea class="campo-form" placeholder="Digite sua mensagem" rows="4" id="mensagem"></textarea>
-      </div>
-      <button type="submit" class="botao-form">Enviar Whatsapp</button>
-    </form>
-
-  </section>
-
-</body>
-
-<footer class="rodape">
-  <h1 class="rodapeh1">Portfolio made by Gustavo Almeida</h1>
-</footer>
-
-<script src="stars.js"></script>
-
+  <script src="stars.js"></script>
 </html>
