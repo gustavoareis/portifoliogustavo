@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background: #1B1C1D;
+  background: #111111;
   color: rgb(255, 255, 255);
 }
 
@@ -24,7 +24,7 @@ body {
   z-index: 100;
   transition: transform 0.4s ease-in-out;
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #222;
 }
 
 .navegacao.ocultar {
@@ -258,8 +258,8 @@ body {
 
 .rodape {
   padding: 28px;
-  background: #dedede;
-  border-top: 1px solid #868686;
+  background: #111111;
+  border-top: 1px solid #222;
 }
 
 .rodapeh1 {
