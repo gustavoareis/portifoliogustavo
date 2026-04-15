@@ -23,7 +23,7 @@ export default function ProjectCard({ project, index = 0, large = false }: Proje
       <Link href={`/portfolio/${project.slug}`} className="card-project block group">
         {/* Image */}
         <div
-          className={`relative overflow-hidden ${large ? 'aspect-[16/10]' : 'aspect-[4/3]'}`}
+          className="relative overflow-hidden aspect-[4/3]"
           style={{ background: 'var(--bg-secondary)' }}
         >
           <Image
