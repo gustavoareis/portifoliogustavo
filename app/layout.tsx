@@ -1,25 +1,41 @@
-import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
-import "./globals.css";
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: "500",
-  variable: "--font-jetbrains",
-});
+import type { Metadata } from 'next'
+import { ThemeProvider } from 'next-themes'
+import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
+import './globals.css'
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-};
+  title: {
+    default: 'Gustavo Reis — Desenvolvedor Web',
+    template: '%s | Gustavo Reis',
+  },
+  description:
+    'Portfolio de Gustavo Reis, Desenvolvedor Web Full Stack com foco em interfaces modernas, performance e experiências digitais de alto impacto.',
+  keywords: ['desenvolvedor web', 'frontend', 'full stack', 'react', 'next.js', 'portfolio'],
+  authors: [{ name: 'Gustavo Reis' }],
+  openGraph: {
+    type: 'website',
+    locale: 'pt_BR',
+    url: 'https://gustavoreis.design',
+    siteName: 'Gustavo Reis Design',
+  },
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={jetbrainsMono.className}>{children}</body>
+    <html lang="pt-BR" suppressHydrationWarning>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+          <div className="grain-overlay" aria-hidden="true" />
+          <Navigation />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
+      </body>
     </html>
-  );
+  )
 }
