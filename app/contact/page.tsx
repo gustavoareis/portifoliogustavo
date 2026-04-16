@@ -129,10 +129,10 @@ export default function ContatoPage() {
                       className="input-field"
                     >
                       <option value="">Selecione um assunto</option>
-                      <option value="branding">Identidade Visual / Branding</option>
-                      <option value="ux">UX/UI Design</option>
-                      <option value="web">Web Design</option>
-                      <option value="packaging">Embalagem</option>
+                      <option value="web">Desenvolvimento Web</option>
+                      <option value="fullstack">Projeto Full Stack</option>
+                      <option value="api">API / Backend</option>
+                      <option value="consultoria">Consultoria Técnica</option>
                       <option value="outro">Outro</option>
                     </select>
                   </div>

@@ -162,7 +162,7 @@ export default function CaseStudyClient({ project }: Props) {
           >
             <div className="section-label mb-4">
               <span className="w-8 h-px" style={{ background: 'var(--accent)' }} />
-              Processo UX
+              Processo
             </div>
             <h2 className="text-heading mb-8" style={{ color: 'var(--text)' }}>
               Como chegamos lá

@@ -8,7 +8,6 @@ import { getFeaturedProjects } from '@/lib/projects'
 import ProjectCard from '@/components/ProjectCard'
 import AnimatedSection from '@/components/AnimatedSection'
 import AsciiBackground from '@/components/AsciiBackground'
-import CurvedLoop from '@/components/CurvedLoop'
 
 const PHRASES = [
   'Full-stack web developer.',
@@ -109,17 +108,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Curved marquee ───────────────────────────────────── */}
-      <section>
-        <CurvedLoop
-          marqueeText="Full Stack ✦ Web Developer ✦ React ✦ Next.js ✦ Design ✦ Deploy ✦"
-          speed={1.5}
-          curveAmount={280}
-          direction="left"
-          interactive={true}
-        />
-      </section>
-
       {/* ── Featured projects ────────────────────────────────── */}
       <section className="py-24">
         <div className="max-w-6xl mx-auto px-6">
@@ -146,7 +134,7 @@ export default function HomePage() {
           {/* Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {featured.map((project, i) => (
-              <ProjectCard key={project.slug} project={project} index={i} large={i === 0} />
+              <ProjectCard key={project.slug} project={project} index={i} />
             ))}
           </div>
         </div>
@@ -157,29 +145,21 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6">
           <AnimatedSection>
             <div
-              className="relative rounded-2xl p-12 md:p-16 overflow-hidden text-center"
-              style={{ background: 'var(--accent)' }}
+              className="p-12 md:p-16 text-center"
             >
-              {/* Background leaf */}
-              <div className="absolute right-0 bottom-0 opacity-10 pointer-events-none">
-                <svg width="300" height="400" viewBox="0 0 180 240" fill="none">
-                  <path d="M90 230 C90 230 10 180 10 100 C10 40 50 10 90 10 C130 10 170 40 170 100 C170 180 90 230 90 230Z" fill="white" />
-                </svg>
-              </div>
-
-              <p className="text-sm font-medium uppercase tracking-widest mb-6 opacity-70" style={{ color: '#F7F4EF' }}>
+              <p className="text-sm font-medium uppercase tracking-widest mb-6 opacity-70" style={{ color: 'var(--text-muted)' }}>
                 Pronto para começar?
               </p>
               <h2
                 className="font-display text-4xl md:text-6xl font-light mb-8 max-w-2xl mx-auto"
-                style={{ color: '#F7F4EF', lineHeight: '1.05' }}
+                style={{ color: 'var(--text)', lineHeight: '1.05' }}
               >
                 Vamos construir algo incrível juntos
               </h2>
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm font-medium transition-all hover:scale-105"
-                style={{ background: '#F7F4EF', color: 'var(--accent)' }}
+                style={{ background: 'var(--accent)', color: '#F7F4EF' }}
               >
                 Iniciar conversa <ArrowRight size={16} />
               </Link>

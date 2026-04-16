@@ -95,7 +95,7 @@ export default function PortfolioPage() {
               className="grid md:grid-cols-2 gap-6"
             >
               {filtered.map((project, i) => (
-                <ProjectCard key={project.slug} project={project} index={i} large={i === 0} />
+                <ProjectCard key={project.slug} project={project} index={i} />
               ))}
             </motion.div>
           </AnimatePresence>

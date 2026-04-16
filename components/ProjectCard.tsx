@@ -9,10 +9,9 @@ import type { Project } from '@/lib/projects'
 interface ProjectCardProps {
   project: Project
   index?: number
-  large?: boolean
 }
 
-export default function ProjectCard({ project, index = 0, large = false }: ProjectCardProps) {
+export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}

@@ -49,18 +49,10 @@ export default function Navigation() {
               <Link
                 key={href}
                 href={href}
-                className="relative text-sm font-medium transition-colors duration-200"
+                className="text-sm font-medium transition-colors duration-200"
                 style={{ color: pathname === href ? 'var(--accent)' : 'var(--text-muted)' }}
               >
                 {label}
-                {pathname === href && (
-                  <motion.span
-                    layoutId="nav-indicator"
-                    className="absolute -bottom-1 left-0 right-0 h-px"
-                    style={{ background: 'var(--accent)' }}
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
-                )}
               </Link>
             ))}
           </div>

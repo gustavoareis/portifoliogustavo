@@ -1,10 +1,9 @@
 import Link from 'next/link'
-import { Instagram, Linkedin, Dribbble, Mail } from 'lucide-react'
+import { Instagram, Linkedin, Mail } from 'lucide-react'
 
 const socials = [
   { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
   { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: Dribbble, href: 'https://dribbble.com', label: 'Dribbble' },
   { icon: Mail, href: 'mailto:gustavo@email.com', label: 'Email' },
 ]
 
@@ -72,7 +71,6 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs" style={{ color: 'var(--text-muted)' }}>
           <p>© {new Date().getFullYear()} Gustavo Reis. Todos os direitos reservados.</p>
-          <p>Feito com atenção a cada detalhe.</p>
         </div>
       </div>
     </footer>

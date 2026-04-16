@@ -36,6 +36,7 @@ export default function AsciiBackground() {
   const mouseRef = useRef({ x: -99999, y: -99999 })
   const cellsRef = useRef<Cell[]>([])
   const rafRef = useRef<number>(0)
+  const visibleRef = useRef(true)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -88,6 +89,7 @@ export default function AsciiBackground() {
 
     // ── Render + physics loop ──────────────────────────────────────
     const render = () => {
+      if (!visibleRef.current) { rafRef.current = requestAnimationFrame(render); return }
       const cells = cellsRef.current
       if (!cells.length) { rafRef.current = requestAnimationFrame(render); return }
 
@@ -160,7 +162,7 @@ export default function AsciiBackground() {
         // ── Draw ─────────────────────────────────────────────────
         const dispDist = Math.sqrt((cell.x - cell.homeX) ** 2 + (cell.y - cell.homeY) ** 2)
         const dispT    = Math.min(1, dispDist / 35)
-        const baseOp   = isDark ? (cell.alpha / 255) * 0.12 : (cell.alpha / 255) * 0.30
+        const baseOp   = isDark ? (cell.alpha / 255) * 0.20 : (cell.alpha / 255) * 0.70
         const op       = baseOp + dispT * 0.6
 
         const drawChar = cell.glitchActive ? cell.glitchChar : cell.char
@@ -199,11 +201,18 @@ export default function AsciiBackground() {
         : { x: -99999, y: -99999 }
     }
 
+    const observer = new IntersectionObserver(
+      ([entry]) => { visibleRef.current = entry.isIntersecting },
+      { threshold: 0 }
+    )
+    observer.observe(canvas)
+
     window.addEventListener('mousemove', onMouseMove)
     window.addEventListener('resize', setup)
 
     return () => {
       cancelAnimationFrame(rafRef.current)
+      observer.disconnect()
       window.removeEventListener('mousemove', onMouseMove)
       window.removeEventListener('resize', setup)
     }
