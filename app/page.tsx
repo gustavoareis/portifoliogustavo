@@ -3,10 +3,46 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import { getFeaturedProjects } from '@/lib/projects'
 import ProjectCard from '@/components/ProjectCard'
 import AnimatedSection from '@/components/AnimatedSection'
 import AsciiBackground from '@/components/AsciiBackground'
+import CurvedLoop from '@/components/CurvedLoop'
+
+const PHRASES = [
+  'Full-stack web developer.',
+  'Digital wizard.',
+  'Crafting code and automating the future.',
+]
+
+function useTypewriter(phrases: string[], typingSpeed = 60, deletingSpeed = 35, pauseMs = 1800) {
+  const [displayed, setDisplayed] = useState('')
+  const [phraseIndex, setPhraseIndex] = useState(0)
+  const [charIndex, setCharIndex] = useState(0)
+  const [deleting, setDeleting] = useState(false)
+
+  useEffect(() => {
+    const current = phrases[phraseIndex]
+    let timeout: ReturnType<typeof setTimeout>
+
+    if (!deleting && charIndex < current.length) {
+      timeout = setTimeout(() => setCharIndex(i => i + 1), typingSpeed)
+    } else if (!deleting && charIndex === current.length) {
+      timeout = setTimeout(() => setDeleting(true), pauseMs)
+    } else if (deleting && charIndex > 0) {
+      timeout = setTimeout(() => setCharIndex(i => i - 1), deletingSpeed)
+    } else if (deleting && charIndex === 0) {
+      setDeleting(false)
+      setPhraseIndex(i => (i + 1) % phrases.length)
+    }
+
+    setDisplayed(current.slice(0, charIndex))
+    return () => clearTimeout(timeout)
+  }, [charIndex, deleting, phraseIndex, phrases, typingSpeed, deletingSpeed, pauseMs])
+
+  return displayed
+}
 
 const stagger = {
   animate: {
@@ -24,6 +60,7 @@ const fadeUp = {
 
 export default function HomePage() {
   const featured = getFeaturedProjects()
+  const typed = useTypewriter(PHRASES)
 
   return (
     <>
@@ -32,12 +69,6 @@ export default function HomePage() {
         <AsciiBackground />
         <div className="max-w-6xl mx-auto px-6 w-full">
           <motion.div variants={stagger} initial="initial" animate="animate">
-            {/* Label */}
-            <motion.div variants={fadeUp} className="section-label mb-8">
-              <span className="w-8 h-px" style={{ background: 'var(--accent)' }} />
-              Desenvolvedor Web Full Stack
-            </motion.div>
-
             {/* Display name */}
             <motion.h1
               variants={fadeUp}
@@ -55,7 +86,13 @@ export default function HomePage() {
               className="text-subheading font-display font-light max-w-2xl mb-12"
               style={{ color: 'var(--text-muted)' }}
             >
-              Construo interfaces modernas e aplicações web de alto desempenho — do design ao deploy.
+              {typed}
+              <span
+                style={{
+                  animation: 'hero-blink 1s step-start infinite',
+                  color: 'var(--accent)',
+                }}
+              >|</span>
             </motion.p>
 
             {/* CTAs */}
@@ -70,6 +107,17 @@ export default function HomePage() {
 
           </motion.div>
         </div>
+      </section>
+
+      {/* ── Curved marquee ───────────────────────────────────── */}
+      <section>
+        <CurvedLoop
+          marqueeText="Full Stack ✦ Web Developer ✦ React ✦ Next.js ✦ Design ✦ Deploy ✦"
+          speed={1.5}
+          curveAmount={280}
+          direction="left"
+          interactive={true}
+        />
       </section>
 
       {/* ── Featured projects ────────────────────────────────── */}

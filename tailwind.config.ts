@@ -38,6 +38,7 @@ const config: Config = {
         'float': 'float 6s ease-in-out infinite',
         'float-slow': 'float 9s ease-in-out infinite',
         'breath': 'breath 4s ease-in-out infinite',
+        'blink': 'blink 1s step-start infinite',
       },
       keyframes: {
         float: {
@@ -47,6 +48,10 @@ const config: Config = {
         breath: {
           '0%, 100%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.03)' },
+        },
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' },
         },
       },
       transitionTimingFunction: {

@@ -1,25 +1,35 @@
 'use client'
 
 import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { Sun, Moon } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
-  useEffect(() => setMounted(true), [])
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
-  if (!mounted) {
-    return <div className="w-9 h-9" />
-  }
+  const isDark = resolvedTheme === 'dark'
 
-  const isDark = theme === 'dark'
+  const toggleTheme = useCallback(() => {
+    const switchTheme = () => setTheme(isDark ? 'light' : 'dark')
+
+    if (!document.startViewTransition) {
+      switchTheme()
+      return
+    }
+
+    document.startViewTransition(switchTheme)
+  }, [isDark, setTheme])
+
+  if (!mounted) return <div className="w-9 h-9" />
 
   return (
     <button
-      onClick={() => setTheme(isDark ? 'light' : 'dark')}
+      onClick={toggleTheme}
       className="relative w-9 h-9 rounded-full flex items-center justify-center transition-colors duration-200"
       style={{
         background: 'var(--bg-secondary)',
@@ -28,18 +38,7 @@ export default function ThemeToggle() {
       }}
       aria-label={isDark ? 'Ativar modo claro' : 'Ativar modo escuro'}
     >
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.span
-          key={isDark ? 'sun' : 'moon'}
-          initial={{ scale: 0.5, opacity: 0, rotate: -30 }}
-          animate={{ scale: 1, opacity: 1, rotate: 0 }}
-          exit={{ scale: 0.5, opacity: 0, rotate: 30 }}
-          transition={{ duration: 0.2 }}
-          className="absolute"
-        >
-          {isDark ? <Sun size={15} /> : <Moon size={15} />}
-        </motion.span>
-      </AnimatePresence>
+      {isDark ? <Sun size={15} /> : <Moon size={15} />}
     </button>
   )
 }
