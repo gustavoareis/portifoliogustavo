@@ -6,6 +6,7 @@ import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { getFeaturedProjects } from '@/lib/projects'
 import ProjectCard from '@/components/ProjectCard'
 import AnimatedSection from '@/components/AnimatedSection'
+import AsciiBackground from '@/components/AsciiBackground'
 
 const stagger = {
   animate: {
@@ -28,6 +29,7 @@ export default function HomePage() {
     <>
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+        <AsciiBackground />
         <div className="max-w-6xl mx-auto px-6 w-full">
           <motion.div variants={stagger} initial="initial" animate="animate">
             {/* Label */}
