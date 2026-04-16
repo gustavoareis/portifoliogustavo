@@ -35,9 +35,9 @@ export default function SobrePage() {
   return (
     <div className="pt-28">
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="py-16 overflow-hidden">
+      <section className="py-12 md:py-16 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Text */}
             <motion.div
               initial={{ opacity: 0, x: -32 }}
@@ -94,7 +94,7 @@ export default function SobrePage() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="absolute -bottom-6 -left-6 p-5 rounded-xl shadow-xl"
+                className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 p-4 sm:p-5 rounded-xl shadow-xl"
                 style={{ background: 'var(--card-bg)', border: '1px solid var(--border)' }}
               >
                 <p className="font-display text-3xl font-light" style={{ color: 'var(--accent)' }}>80+</p>
@@ -110,9 +110,9 @@ export default function SobrePage() {
       </section>
 
       {/* ── Skills ───────────────────────────────────────────── */}
-      <section className="py-24" style={{ background: 'var(--bg-secondary)' }}>
+      <section className="py-16 md:py-24" style={{ background: 'var(--bg-secondary)' }}>
         <div className="max-w-6xl mx-auto px-6">
-          <AnimatedSection className="mb-12">
+          <AnimatedSection className="mb-10 md:mb-12">
             <div className="section-label mb-4">
               <span className="w-8 h-px" style={{ background: 'var(--accent)' }} />
               Competências
@@ -152,9 +152,9 @@ export default function SobrePage() {
       </section>
 
       {/* ── Tools ────────────────────────────────────────────── */}
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             <AnimatedSection>
               <div className="section-label mb-4">
                 <span className="w-8 h-px" style={{ background: 'var(--accent)' }} />
@@ -195,9 +195,9 @@ export default function SobrePage() {
       </section>
 
       {/* ── Timeline ─────────────────────────────────────────── */}
-      <section className="py-24" style={{ background: 'var(--bg-secondary)' }}>
+      <section className="py-16 md:py-24" style={{ background: 'var(--bg-secondary)' }}>
         <div className="max-w-6xl mx-auto px-6">
-          <AnimatedSection className="mb-12">
+          <AnimatedSection className="mb-10 md:mb-12">
             <div className="section-label mb-4">
               <span className="w-8 h-px" style={{ background: 'var(--accent)' }} />
               Trajetória

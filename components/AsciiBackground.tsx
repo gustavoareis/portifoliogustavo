@@ -53,7 +53,29 @@ export default function AsciiBackground() {
       off.height = rows
       const offCtx = off.getContext('2d')!
       offCtx.clearRect(0, 0, cols, rows)
-      offCtx.drawImage(img, 0, 0, cols, rows)
+
+      // Draw with cover strategy — preserve aspect ratio, fill the canvas
+      const imgW = img.naturalWidth || img.width
+      const imgH = img.naturalHeight || img.height
+      const imgAspect = imgW / imgH
+      const canvasAspect = cols / rows
+
+      let drawW: number, drawH: number, drawX: number, drawY: number
+      if (imgAspect > canvasAspect) {
+        // Image is relatively wider — fit by height, crop sides
+        drawH = rows
+        drawW = rows * imgAspect
+        drawX = (cols - drawW) / 2
+        drawY = 0
+      } else {
+        // Image is relatively taller — fit by width, crop top/bottom
+        drawW = cols
+        drawH = cols / imgAspect
+        drawX = 0
+        drawY = (rows - drawH) / 2
+      }
+
+      offCtx.drawImage(img, drawX, drawY, drawW, drawH)
       const { data } = offCtx.getImageData(0, 0, cols, rows)
 
       const cells: Cell[] = []

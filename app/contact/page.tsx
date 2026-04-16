@@ -30,7 +30,7 @@ export default function ContatoPage() {
   return (
     <div className="pt-28">
       {/* ── Header ───────────────────────────────────────────── */}
-      <section className="py-16 overflow-hidden">
+      <section className="py-12 md:py-16 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           <div className="relative">
             <div
@@ -60,9 +60,9 @@ export default function ContatoPage() {
       </section>
 
       {/* ── Content ──────────────────────────────────────────── */}
-      <section className="pb-24">
+      <section className="pb-16 md:pb-24">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[1fr_400px] gap-12">
+          <div className="grid lg:grid-cols-[1fr_400px] gap-8 lg:gap-12">
             {/* Form */}
             <AnimatedSection>
               {status === 'sent' ? (

@@ -22,7 +22,7 @@ export default function PortfolioPage() {
   return (
     <div className="pt-28">
       {/* ── Header ───────────────────────────────────────────── */}
-      <section className="py-16 pb-0 overflow-hidden">
+      <section className="py-12 md:py-16 pb-0 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           <div className="relative">
             {/* Blob */}
@@ -77,7 +77,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* ── Grid ─────────────────────────────────────────────── */}
-      <section className="py-12 pb-24">
+      <section className="py-8 md:py-12 pb-16 md:pb-24">
         <div className="max-w-6xl mx-auto px-6">
           <div className="mb-6 flex items-center justify-between">
             <p className="text-sm" style={{ color: 'var(--text-muted)' }}>

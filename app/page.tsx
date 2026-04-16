@@ -64,7 +64,7 @@ export default function HomePage() {
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+      <section className="relative min-h-screen flex items-center pt-20 pb-12 md:pt-24 md:pb-16 overflow-hidden">
         <AsciiBackground />
         <div className="max-w-6xl mx-auto px-6 w-full">
           <motion.div variants={stagger} initial="initial" animate="animate">
@@ -109,10 +109,10 @@ export default function HomePage() {
       </section>
 
       {/* ── Featured projects ────────────────────────────────── */}
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-6">
           {/* Section header */}
-          <AnimatedSection className="flex items-end justify-between mb-12 flex-wrap gap-4">
+          <AnimatedSection className="flex items-end justify-between mb-10 md:mb-12 flex-wrap gap-4">
             <div>
               <div className="section-label mb-4">
                 <span className="w-8 h-px" style={{ background: 'var(--accent)' }} />
@@ -141,17 +141,17 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA banner ───────────────────────────────────────── */}
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-6">
           <AnimatedSection>
             <div
-              className="p-12 md:p-16 text-center"
+              className="p-8 sm:p-12 md:p-16 text-center"
             >
               <p className="text-sm font-medium uppercase tracking-widest mb-6 opacity-70" style={{ color: 'var(--text-muted)' }}>
                 Pronto para começar?
               </p>
               <h2
-                className="font-display text-4xl md:text-6xl font-light mb-8 max-w-2xl mx-auto"
+                className="font-display text-3xl sm:text-4xl md:text-6xl font-light mb-8 max-w-2xl mx-auto"
                 style={{ color: 'var(--text)', lineHeight: '1.05' }}
               >
                 Vamos construir algo incrível juntos
