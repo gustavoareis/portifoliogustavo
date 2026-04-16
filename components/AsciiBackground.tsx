@@ -78,7 +78,7 @@ export default function AsciiBackground() {
       canvas.width = canvas.offsetWidth
       canvas.height = canvas.offsetHeight
       const img = new Image()
-      img.src = '/images/background-img.svg'
+      img.src = '/portifoliogustavo/images/background-img.svg'
       img.onload = () => buildCells(img)
     }
 
