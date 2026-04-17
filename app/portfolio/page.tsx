@@ -36,16 +36,9 @@ export default function PortfolioPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <div className="section-label mb-6">
-                <span className="w-8 h-px" style={{ background: 'var(--accent)' }} />
-                Portfólio
-              </div>
-              <h1 className="text-heading mb-4" style={{ color: 'var(--text)' }}>
-                Projetos & <em className="not-italic" style={{ color: 'var(--accent)' }}>Cases</em>
+              <h1 className="text-heading mb-10" style={{ color: 'var(--text)' }}>
+                Projetos
               </h1>
-              <p className="text-base max-w-xl mb-10" style={{ color: 'var(--text-muted)' }}>
-                Uma seleção de projetos que me orgulho — cada um com seus desafios técnicos, decisões de arquitetura e aprendizados.
-              </p>
             </motion.div>
 
             {/* Filters */}
