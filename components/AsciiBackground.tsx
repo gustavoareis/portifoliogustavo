@@ -306,9 +306,9 @@ export default function AsciiBackground() {
       }
 
       // Process displaced cells not already handled by grid lookup
-      for (const cell of displaced) {
+      displaced.forEach(cell => {
         if (cell.lastFrame !== frameId) processCell(cell)
-      }
+      })
     }
 
     render()
