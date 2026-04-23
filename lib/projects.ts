@@ -91,6 +91,30 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'qr-code-gen',
+    title: 'QR Code Gen',
+    tagline: 'Gerador de QR Code rápido e minimalista feito com Next.js',
+    category: 'Frontend · Ferramenta',
+    cover: '/portifoliogustavo/cover-qrcode.png',
+    accent: '#0EA5E9',
+    featured: true,
+    description:
+      'Aplicação web para geração de QR Codes de forma rápida. Interface limpa, resultado instantâneo e download direto.',
+    features: [
+      'Geração de QR Code instantânea a partir de qualquer texto ou URL',
+      'Download do QR Code em PNG com um clique',
+      'Interface minimalista focada em velocidade de uso',
+    ],
+    links: {
+      github: 'https://github.com/gustavoareis/qr-code-generator',
+      live: 'https://qr-code-generator-three-xi.vercel.app/',
+    },
+    tools: ['Next.js', 'React', 'TypeScript'],
+    gallery: [
+      '/portifoliogustavo/cover-qrcode.png',
+    ],
+  },
+  {
     slug: 'nefi-ink',
     title: 'Nefi Ink',
     tagline: 'Landing page para artista tatuador',
