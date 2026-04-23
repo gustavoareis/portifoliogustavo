@@ -38,7 +38,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
             style={{ background: 'rgba(0,0,0,0.35)' }}
           >
             <div className="flex items-center gap-2 text-white text-sm font-medium bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/20">
-              Ver case <ArrowUpRight size={15} />
+              Ver projeto <ArrowUpRight size={15} />
             </div>
           </div>
         </div>
@@ -54,9 +54,6 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                 {project.title}
               </h3>
             </div>
-            <span className="text-xs shrink-0 mt-1" style={{ color: 'var(--text-muted)' }}>
-              {project.year}
-            </span>
           </div>
 
           <p className="text-sm leading-relaxed mb-4 line-clamp-2" style={{ color: 'var(--text-muted)' }}>
@@ -64,9 +61,9 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           </p>
 
           <div className="flex flex-wrap gap-1.5">
-            {project.tags.slice(0, 3).map((tag) => (
-              <span key={tag} className="tag-chip">
-                {tag}
+            {project.tools.slice(0, 3).map((tool) => (
+              <span key={tool} className="tag-chip">
+                {tool}
               </span>
             ))}
           </div>

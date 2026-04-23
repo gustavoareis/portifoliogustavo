@@ -2,6 +2,7 @@
 const nextConfig = {
   basePath: '/portifoliogustavo',
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
