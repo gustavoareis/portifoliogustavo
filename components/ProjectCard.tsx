@@ -14,12 +14,13 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   return (
     <motion.div
+      className="h-full"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
     >
-      <Link href={`/portfolio/${project.slug}`} className="card-project block group">
+      <Link href={`/portfolio/${project.slug}`} className="card-project flex flex-col h-full group">
         {/* Image */}
         <div
           className="relative overflow-hidden aspect-[4/3]"
@@ -38,13 +39,13 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
             style={{ background: 'rgba(0,0,0,0.35)' }}
           >
             <div className="flex items-center gap-2 text-white text-sm font-medium bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/20">
-              Ver case <ArrowUpRight size={15} />
+              Ver projeto <ArrowUpRight size={15} />
             </div>
           </div>
         </div>
 
         {/* Content */}
-        <div className="p-5 sm:p-6">
+        <div className="p-5 sm:p-6 flex flex-col flex-1">
           <div className="flex items-start justify-between gap-4 mb-3">
             <div>
               <p className="text-xs font-medium uppercase tracking-widest mb-1.5" style={{ color: 'var(--accent)' }}>
@@ -54,19 +55,16 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                 {project.title}
               </h3>
             </div>
-            <span className="text-xs shrink-0 mt-1" style={{ color: 'var(--text-muted)' }}>
-              {project.year}
-            </span>
           </div>
 
           <p className="text-sm leading-relaxed mb-4 line-clamp-2" style={{ color: 'var(--text-muted)' }}>
             {project.tagline}
           </p>
 
-          <div className="flex flex-wrap gap-1.5">
-            {project.tags.slice(0, 3).map((tag) => (
-              <span key={tag} className="tag-chip">
-                {tag}
+          <div className="flex flex-wrap gap-1.5 mt-auto">
+            {project.tools.slice(0, 3).map((tool) => (
+              <span key={tool} className="tag-chip">
+                {tool}
               </span>
             ))}
           </div>

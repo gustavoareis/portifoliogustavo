@@ -2,13 +2,12 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Send, Instagram, Linkedin, Dribbble, Mail, MapPin, Clock } from 'lucide-react'
+import { Send, Instagram, Github, Mail, MapPin } from 'lucide-react'
 import AnimatedSection from '@/components/AnimatedSection'
 
 const socials = [
-  { icon: Instagram, label: 'Instagram', handle: '@gustavoreis.design', href: 'https://instagram.com' },
-  { icon: Linkedin, label: 'LinkedIn', handle: 'Gustavo Reis', href: 'https://linkedin.com' },
-  { icon: Dribbble, label: 'Dribbble', handle: 'gustavoreis', href: 'https://dribbble.com' },
+  { icon: Instagram, label: 'Instagram', handle: '@gustavoreisz_', href: 'https://instagram.com/gustavoreisz_' },
+  { icon: Github, label: 'GitHub', handle: 'gustavoareis', href: 'https://github.com/gustavoareis' },
 ]
 
 export default function ContatoPage() {
@@ -197,11 +196,11 @@ export default function ContatoPage() {
                     <div>
                       <p className="text-xs uppercase tracking-widest mb-0.5" style={{ color: 'var(--text-muted)' }}>Email</p>
                       <a
-                        href="mailto:gustavo@email.com"
+                        href="mailto:gustavoalreisz@gmail.com"
                         className="text-sm font-medium hover:text-accent transition-colors"
                         style={{ color: 'var(--text)' }}
                       >
-                        gustavo@email.com
+                        gustavoalreisz@gmail.com
                       </a>
                     </div>
                   </div>
@@ -216,25 +215,11 @@ export default function ContatoPage() {
                     <div>
                       <p className="text-xs uppercase tracking-widest mb-0.5" style={{ color: 'var(--text-muted)' }}>Localização</p>
                       <p className="text-sm font-medium" style={{ color: 'var(--text)' }}>
-                        São Paulo, Brasil
+                        Fortaleza, Ceará, Brasil
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <div
-                      className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
-                      style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)' }}
-                    >
-                      <Clock size={14} style={{ color: 'var(--accent)' }} />
-                    </div>
-                    <div>
-                      <p className="text-xs uppercase tracking-widest mb-0.5" style={{ color: 'var(--text-muted)' }}>Disponibilidade</p>
-                      <p className="text-sm font-medium" style={{ color: 'var(--text)' }}>
-                        Seg–Sex, 9h–18h
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
 
@@ -269,25 +254,6 @@ export default function ContatoPage() {
                 </div>
               </div>
 
-              {/* Availability badge */}
-              <div
-                className="p-5 rounded-xl flex items-center gap-3"
-                style={{ background: 'rgba(61, 107, 82, 0.1)', border: '1px solid rgba(61, 107, 82, 0.25)' }}
-              >
-                <span className="relative w-3 h-3 shrink-0">
-                  <span
-                    className="absolute inset-0 rounded-full animate-ping opacity-75"
-                    style={{ background: 'var(--accent)' }}
-                  />
-                  <span
-                    className="absolute inset-0.5 rounded-full"
-                    style={{ background: 'var(--accent)' }}
-                  />
-                </span>
-                <p className="text-sm font-medium" style={{ color: 'var(--accent)' }}>
-                  Disponível para novos projetos
-                </p>
-              </div>
             </AnimatedSection>
           </div>
         </div>

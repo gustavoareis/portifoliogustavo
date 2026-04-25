@@ -6,7 +6,7 @@ import { projects } from '@/lib/projects'
 import ProjectCard from '@/components/ProjectCard'
 import AnimatedSection from '@/components/AnimatedSection'
 
-const categories = ['Todos', 'Frontend', 'Full Stack', 'E-commerce', 'Open Source']
+const categories = ['Todos', 'Frontend', 'Backend', 'Flutter', 'Open Source']
 
 export default function PortfolioPage() {
   const [activeFilter, setActiveFilter] = useState('Todos')
@@ -16,7 +16,7 @@ export default function PortfolioPage() {
       ? projects
       : projects.filter((p) =>
           p.category.toLowerCase().includes(activeFilter.toLowerCase()) ||
-          p.tags.some((t) => t.toLowerCase().includes(activeFilter.toLowerCase()))
+          p.tools.some((t) => t.toLowerCase().includes(activeFilter.toLowerCase()))
         )
 
   return (
