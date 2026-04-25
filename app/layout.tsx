@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     'Portfolio de Gustavo Reis, Desenvolvedor Web Full Stack com foco em interfaces modernas, performance e experiências digitais de alto impacto.',
   keywords: ['desenvolvedor web', 'frontend', 'full stack', 'react', 'next.js', 'portfolio'],
   authors: [{ name: 'Gustavo Reis' }],
+  icons: { icon: '/favicon.svg' },
   openGraph: {
     type: 'website',
     locale: 'pt_BR',

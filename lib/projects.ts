@@ -19,7 +19,7 @@ export const projects: Project[] = [
     title: 'Miwbot',
     tagline: 'Bot de Discord open source, moderno e leve para servidores',
     category: 'Backend · Open Source',
-    cover: '/cover-miwbot.png',
+    cover: '/projects/miwbot.png',
     accent: '#7C3AED',
     featured: true,
     description:
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     },
     tools: ['TypeScript', 'Python', 'Node.js', 'Discord.js', 'GitHub Actions'],
     gallery: [
-      '/cover-miwbot.png',
+      '/projects/miwbot.png',
     ],
   },
   {
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     title: 'AnestCalc',
     tagline: 'Calculadora de anestesia odontológica para uso clínico',
     category: 'Flutter · Saúde',
-    cover: '/cover-anest.png',
+    cover: '/projects/anest-calc.png',
     accent: '#2D6A4F',
     featured: true,
     description:
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     },
     tools: ['Flutter', 'Dart'],
     gallery: [
-      '/cover-anest.png',
+      '/projects/anest-calc.png',
     ],
   },
   {
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     title: 'YT Downloader',
     tagline: 'Baixe vídeos e músicas do YouTube via terminal',
     category: 'Backend · CLI',
-    cover: '/cover-ytd.png',
+    cover: '/projects/yt-downloader.png',
     accent: '#8B5CF6',
     featured: true,
     description:
@@ -87,7 +87,7 @@ export const projects: Project[] = [
     },
     tools: ['Go'],
     gallery: [
-      '/cover-ytd.png',
+      '/projects/yt-downloader.png',
     ],
   },
   {
@@ -95,7 +95,7 @@ export const projects: Project[] = [
     title: 'QR Code Gen',
     tagline: 'Gerador de QR Code rápido e minimalista feito com Next.js',
     category: 'Frontend · Ferramenta',
-    cover: '/cover-qrcode.png',
+    cover: '/projects/qr-code-gen.png',
     accent: '#0EA5E9',
     featured: true,
     description:
@@ -111,7 +111,7 @@ export const projects: Project[] = [
     },
     tools: ['Next.js', 'React', 'TypeScript'],
     gallery: [
-      '/cover-qrcode.png',
+      '/projects/qr-code-gen.png',
     ],
   },
   {
@@ -119,7 +119,7 @@ export const projects: Project[] = [
     title: 'Nefi Ink',
     tagline: 'Landing page para artista tatuador',
     category: 'Frontend · Landing Page',
-    cover: '/cover-nefi.png',
+    cover: '/projects/nefi-ink.png',
     accent: '#C41E1E',
     featured: true,
     description:
@@ -136,7 +136,7 @@ export const projects: Project[] = [
     },
     tools: ['Next.js', 'React', 'TypeScript'],
     gallery: [
-      '/cover-nefi.png',
+      '/projects/nefi-ink.png',
     ],
   },
 ]

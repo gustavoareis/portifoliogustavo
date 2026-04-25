@@ -145,7 +145,7 @@ export default function AsciiBackground() {
       canvas.width = canvas.offsetWidth
       canvas.height = canvas.offsetHeight
       const img = new Image()
-      img.src = '/images/background-img.svg'
+      img.src = '/images/background.svg'
       img.onload = () => buildCells(img)
     }
 
@@ -343,10 +343,16 @@ export default function AsciiBackground() {
     )
     observer.observe(canvas)
 
+    const onScroll = () => {
+      rectRef.current = canvas.getBoundingClientRect()
+      mouseRef.current = { x: -99999, y: -99999 }
+    }
+
     window.addEventListener('mousemove', onMouseMove)
     window.addEventListener('touchmove', onTouchMove, { passive: true })
     window.addEventListener('touchend', onTouchEnd)
     window.addEventListener('resize', onResize)
+    window.addEventListener('scroll', onScroll, { passive: true })
 
     return () => {
       cancelAnimationFrame(rafRef.current)
@@ -356,6 +362,7 @@ export default function AsciiBackground() {
       window.removeEventListener('touchmove', onTouchMove)
       window.removeEventListener('touchend', onTouchEnd)
       window.removeEventListener('resize', onResize)
+      window.removeEventListener('scroll', onScroll)
     }
   }, [])
 
