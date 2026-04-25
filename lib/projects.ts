@@ -19,7 +19,7 @@ export const projects: Project[] = [
     title: 'Miwbot',
     tagline: 'Bot de Discord open source, moderno e leve para servidores',
     category: 'Backend · Open Source',
-    cover: '/portifoliogustavo/cover-miwbot.png',
+    cover: '/cover-miwbot.png',
     accent: '#7C3AED',
     featured: true,
     description:
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     },
     tools: ['TypeScript', 'Python', 'Node.js', 'Discord.js', 'GitHub Actions'],
     gallery: [
-      '/portifoliogustavo/cover-miwbot.png',
+      '/cover-miwbot.png',
     ],
   },
   {
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     title: 'AnestCalc',
     tagline: 'Calculadora de anestesia odontológica para uso clínico',
     category: 'Flutter · Saúde',
-    cover: '/portifoliogustavo/cover-anest.png',
+    cover: '/cover-anest.png',
     accent: '#2D6A4F',
     featured: true,
     description:
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     },
     tools: ['Flutter', 'Dart'],
     gallery: [
-      '/portifoliogustavo/cover-anest.png',
+      '/cover-anest.png',
     ],
   },
   {
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     title: 'YT Downloader',
     tagline: 'Baixe vídeos e músicas do YouTube via terminal',
     category: 'Backend · CLI',
-    cover: '/portifoliogustavo/cover-ytd.png',
+    cover: '/cover-ytd.png',
     accent: '#8B5CF6',
     featured: true,
     description:
@@ -87,7 +87,7 @@ export const projects: Project[] = [
     },
     tools: ['Go'],
     gallery: [
-      '/portifoliogustavo/cover-ytd.png',
+      '/cover-ytd.png',
     ],
   },
   {
@@ -95,7 +95,7 @@ export const projects: Project[] = [
     title: 'QR Code Gen',
     tagline: 'Gerador de QR Code rápido e minimalista feito com Next.js',
     category: 'Frontend · Ferramenta',
-    cover: '/portifoliogustavo/cover-qrcode.png',
+    cover: '/cover-qrcode.png',
     accent: '#0EA5E9',
     featured: true,
     description:
@@ -111,7 +111,7 @@ export const projects: Project[] = [
     },
     tools: ['Next.js', 'React', 'TypeScript'],
     gallery: [
-      '/portifoliogustavo/cover-qrcode.png',
+      '/cover-qrcode.png',
     ],
   },
   {
@@ -119,7 +119,7 @@ export const projects: Project[] = [
     title: 'Nefi Ink',
     tagline: 'Landing page para artista tatuador',
     category: 'Frontend · Landing Page',
-    cover: '/portifoliogustavo/cover-nefi.png',
+    cover: '/cover-nefi.png',
     accent: '#C41E1E',
     featured: true,
     description:
@@ -136,7 +136,7 @@ export const projects: Project[] = [
     },
     tools: ['Next.js', 'React', 'TypeScript'],
     gallery: [
-      '/portifoliogustavo/cover-nefi.png',
+      '/cover-nefi.png',
     ],
   },
 ]
