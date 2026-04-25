@@ -90,9 +90,6 @@ export default function HomePage() {
               <Link href="/portfolio" className="btn-primary">
                 Ver projetos <ArrowRight size={16} />
               </Link>
-              <Link href="/about" className="btn-outline">
-                Sobre mim
-              </Link>
             </motion.div>
           </motion.div>
         </div>

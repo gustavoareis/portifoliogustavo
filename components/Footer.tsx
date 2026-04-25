@@ -8,7 +8,6 @@ const socials = [
 ]
 
 const links = [
-  { href: '/about', label: 'Sobre' },
   { href: '/portfolio', label: 'Portfólio' },
   { href: '/contact', label: 'Contato' },
 ]
