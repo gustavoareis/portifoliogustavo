@@ -4,17 +4,17 @@ import { Resend } from 'resend'
 export async function POST(request: Request) {
   try {
     if (!process.env.RESEND_API_KEY) {
-      return NextResponse.json({ error: 'Email API key nao configurada.' }, { status: 500 })
+      return NextResponse.json({ error: 'Email API key não configurada.' }, { status: 500 })
     }
 
     const resend = new Resend(process.env.RESEND_API_KEY)
     const { name, email, subject, message } = await request.json()
 
     if (!name || !email || !message) {
-      return NextResponse.json({ error: 'Campos obrigatorios ausentes.' }, { status: 400 })
+      return NextResponse.json({ error: 'Campos obrigatórios ausentes.' }, { status: 400 })
     }
 
-    const emailSubject = subject ? `Contato portfolio: ${subject}` : 'Novo contato pelo portfolio'
+    const emailSubject = subject ? `Contato portfólio: ${subject}` : 'Novo contato pelo portfólio'
 
     const { error } = await resend.emails.send({
       from: process.env.CONTACT_FROM_EMAIL ?? 'Portfolio <onboarding@resend.dev>',
@@ -23,10 +23,10 @@ export async function POST(request: Request) {
       subject: emailSubject,
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #222;">
-          <h2>Novo contato pelo portfolio</h2>
+          <h2>Novo contato pelo portfólio</h2>
           <p><strong>Nome:</strong> ${escapeHtml(name)}</p>
           <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-          <p><strong>Assunto:</strong> ${escapeHtml(subject || 'Nao informado')}</p>
+          <p><strong>Assunto:</strong> ${escapeHtml(subject || 'Não informado')}</p>
           <hr />
           <p>${escapeHtml(message).replace(/\n/g, '<br />')}</p>
         </div>
@@ -34,12 +34,17 @@ export async function POST(request: Request) {
     })
 
     if (error) {
-      return NextResponse.json({ error: 'Nao foi possivel enviar a mensagem.' }, { status: 500 })
+      console.error('Resend error:', error)
+      return NextResponse.json(
+        { error: error.message ?? 'Não foi possível enviar a mensagem.' },
+        { status: 500 }
+      )
     }
 
     return NextResponse.json({ ok: true })
-  } catch {
-    return NextResponse.json({ error: 'Nao foi possivel processar a mensagem.' }, { status: 500 })
+  } catch (error) {
+    console.error('Contact route error:', error)
+    return NextResponse.json({ error: 'Não foi possível processar a mensagem.' }, { status: 500 })
   }
 }
 

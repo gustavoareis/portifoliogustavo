@@ -13,6 +13,7 @@ const socials = [
 export default function ContatoPage() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -21,6 +22,7 @@ export default function ContatoPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('sending')
+    setErrorMessage('')
 
     try {
       const response = await fetch('/api/contact', {
@@ -29,11 +31,16 @@ export default function ContatoPage() {
         body: JSON.stringify(form),
       })
 
-      if (!response.ok) throw new Error('Failed to send message')
+      const data = await response.json().catch(() => null)
+
+      if (!response.ok) {
+        throw new Error(data?.error ?? 'Não foi possível enviar agora.')
+      }
 
       setStatus('sent')
       setForm({ name: '', email: '', subject: '', message: '' })
-    } catch {
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : 'Não foi possível enviar agora.')
       setStatus('error')
     }
   }
@@ -186,7 +193,7 @@ export default function ContatoPage() {
 
                   {status === 'error' && (
                     <p className="text-sm" style={{ color: 'var(--accent)' }}>
-                      Nao foi possivel enviar agora. Tente novamente ou envie um email direto.
+                      {errorMessage} Tente novamente ou envie um email direto.
                     </p>
                   )}
                 </form>
