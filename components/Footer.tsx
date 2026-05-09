@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import { Instagram, Linkedin, Mail } from 'lucide-react'
+import { Github, Instagram, Mail } from 'lucide-react'
 
 const socials = [
-  { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
-  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: Mail, href: 'mailto:gustavo@email.com', label: 'Email' },
+  { icon: Instagram, href: 'https://instagram.com/gustavoreisz_', label: 'Instagram' },
+  { icon: Github, href: 'https://github.com/gustavoareis', label: 'GitHub' },
+  { icon: Mail, href: 'mailto:gustavoalreisz@gmail.com', label: 'Email' },
 ]
 
 const links = [

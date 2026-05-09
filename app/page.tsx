@@ -67,7 +67,9 @@ export default function HomePage() {
   return (
     <>
       <section className="relative min-h-screen flex items-center pt-20 pb-12 md:pt-24 md:pb-16 overflow-hidden">
-        <AsciiBackground />
+        <div className="absolute inset-0 hidden md:block" aria-hidden="true">
+          <AsciiBackground />
+        </div>
         <div className="max-w-6xl mx-auto px-6 w-full">
           <motion.div variants={stagger} initial="initial" animate="animate">
             <motion.h1 variants={fadeUp} className="text-display mb-6">

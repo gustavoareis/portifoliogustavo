@@ -11,7 +11,7 @@ interface Props {
   project: Project
 }
 
-export default function CaseStudyClient({ project }: Props) {
+export default function ProjectDetail({ project }: Props) {
   return (
     <div className="pt-24">
       {/* ── Back ─────────────────────────────────────────────── */}
@@ -74,8 +74,8 @@ export default function CaseStudyClient({ project }: Props) {
             </p>
 
             {/* Links */}
-            {(project.links.github || project.links.live) && (
-              <div className="flex gap-3 mt-6">
+            {(project.links.github || project.links.repo || project.links.live) && (
+              <div className="flex flex-wrap gap-3 mt-6">
                 {project.links.github && (
                   <a
                     href={project.links.github}
@@ -193,11 +193,11 @@ export default function CaseStudyClient({ project }: Props) {
 
         {/* ── Navigation ───────────────────────────────────────── */}
         <div className="divider mb-12" />
-        <AnimatedSection className="flex items-center justify-between pb-24">
-          <Link href="/portfolio" className="btn-outline">
+        <AnimatedSection className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-24">
+          <Link href="/portfolio" className="btn-outline w-full sm:w-auto justify-center">
             <ArrowLeft size={16} /> Todos os projetos
           </Link>
-          <Link href="/contact" className="btn-primary">
+          <Link href="/contact" className="btn-primary w-full sm:w-auto justify-center">
             Iniciar um projeto <ArrowUpRight size={16} />
           </Link>
         </AnimatedSection>

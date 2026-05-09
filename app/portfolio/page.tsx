@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { projects } from '@/lib/projects'
 import ProjectCard from '@/components/ProjectCard'
-import AnimatedSection from '@/components/AnimatedSection'
 
 const categories = ['Todos', 'Frontend', 'Backend', 'Flutter', 'Open Source']
 

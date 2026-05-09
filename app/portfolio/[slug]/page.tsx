@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { getProjectBySlug, projects } from '@/lib/projects'
-import CaseStudyClient from './CaseStudyClient'
+import ProjectDetail from './ProjectDetail'
 
 interface Props {
   params: { slug: string }
@@ -24,5 +24,5 @@ export default function CaseStudyPage({ params }: Props) {
   const project = getProjectBySlug(params.slug)
   if (!project) notFound()
 
-  return <CaseStudyClient project={project} />
+  return <ProjectDetail project={project} />
 }

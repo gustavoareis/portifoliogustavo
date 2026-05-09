@@ -142,6 +142,8 @@ export default function AsciiBackground() {
     }
 
     const setup = () => {
+      if (canvas.offsetWidth === 0 || canvas.offsetHeight === 0) return
+
       canvas.width = canvas.offsetWidth
       canvas.height = canvas.offsetHeight
       const img = new Image()

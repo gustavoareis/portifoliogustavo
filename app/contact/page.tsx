@@ -21,9 +21,21 @@ export default function ContatoPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('sending')
-    // Simulate send
-    await new Promise((r) => setTimeout(r, 1500))
-    setStatus('sent')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+
+      if (!response.ok) throw new Error('Failed to send message')
+
+      setStatus('sent')
+      setForm({ name: '', email: '', subject: '', message: '' })
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -171,6 +183,12 @@ export default function ContatoPage() {
                       </>
                     )}
                   </button>
+
+                  {status === 'error' && (
+                    <p className="text-sm" style={{ color: 'var(--accent)' }}>
+                      Nao foi possivel enviar agora. Tente novamente ou envie um email direto.
+                    </p>
+                  )}
                 </form>
               )}
             </AnimatedSection>
