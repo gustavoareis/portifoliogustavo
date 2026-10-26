@@ -4,15 +4,16 @@ import { getProjectBySlug, projects } from '@/lib/projects'
 import ProjectDetail from './ProjectDetail'
 
 interface Props {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }))
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const project = getProjectBySlug(params.slug)
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params
+  const project = getProjectBySlug(slug)
   if (!project) return {}
   return {
     title: `${project.title} — ${project.category}`,
@@ -20,8 +21,9 @@ export function generateMetadata({ params }: Props): Metadata {
   }
 }
 
-export default function CaseStudyPage({ params }: Props) {
-  const project = getProjectBySlug(params.slug)
+export default async function CaseStudyPage({ params }: Props) {
+  const { slug } = await params
+  const project = getProjectBySlug(slug)
   if (!project) notFound()
 
   return <ProjectDetail project={project} />
